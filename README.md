@@ -4,11 +4,11 @@ Split-Split is a **tiny A/B testing framework**. It relies on Ahoy for visitor t
 
 ## Usage
 
-Let's say, we've made two versions of our landing page and we can't decide which one is better.
+Let's say, we've made two versions of our landing page and can't decide which one is better.
 
 ### 1. Collect the data
 
-We put our two versions into separate files: `landing_page_visual.html.erb` and `landing_page_textual.html.erb`. Head into the controller action that renders the landing page and insert `split_test` there.
+We've put our two versions into separate files: `landing_page_visual.html.erb` and `landing_page_textual.html.erb`. Head into the controller action that renders the landing page and insert `split_test` there.
 
 ```ruby
 def landing_page
