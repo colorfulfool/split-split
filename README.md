@@ -1,6 +1,26 @@
 # Split-Split
 
-Split-Split is a **tiny A/B testing framework** for Rails. It relies on Ahoy for visitor tracking.
+Split-Split is a **tiny A/B testing framework** for Rails.
+
+Perform an experiment anywhere in the app:
+```erb
+<% split_test :welcome_speech, [:polite, :consise] do |variant| %>
+  <h1><%= t("welcome_speech.#{variant}") %></h1>
+<% end %>
+```
+
+Visualize the results:
+```erb
+<%= pie_chart SplitTestResults.new(:welcome_speech).success_rates %>
+```
+
+## Installation
+
+Visitor tracking is provided by Ahoy. If you want to chart the results like in example above, install Chartkick.
+
+```ruby
+gem 'split_split'
+```
 
 ## Usage
 
