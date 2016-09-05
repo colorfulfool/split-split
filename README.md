@@ -2,23 +2,21 @@
 
 Split-Split is a **tiny A/B testing framework** for Rails.
 
-Can't decide which version of the landing page to use? Use both:
-```ruby
-def landing_page
-  split_test :landing_page, [:visual, :textual] do |variant|
-    render "landing_page_#{variant}"
-  end
-end
+Set up an experiment.
+```erb
+<% split_test :welcome_speech, [:rich, :consise] do |variant| %>
+  <h2><%= t("welcome_speech.#{variant}") %></h2>
+<% end %>
 ```
 
-Then visualize the difference:
+Visualize the results.
 ```erb
-<%= pie_chart SplitTestResults.new(:landing_page).success_rates %>
+<%= pie_chart SplitTestResults.new(:welcome_speech).success_rates %>
 ```
 
 ## Installation
 
-Visitor tracking is provided by Ahoy. If you want to chart the results like in example above, install Chartkick.
+Visitor tracking is provided by Ahoy. If you want to chart the results like in example above, install Chartkick as well.
 
 ```ruby
 gem 'split_split'
