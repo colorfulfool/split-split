@@ -43,13 +43,12 @@ end
 Wherever you want to display results, write this:
 
 ```erb
-<h2>Landing pages comparsion</h2>
 <% SplitTestResults.new(:landing_page).success_rates.each do |variant, rate| %>
   <%= variant %> --> <%= "#{rate.to_i}%" %>
 <% end %>
 ```
 
-It assumes that each visit was tracked as an `Ahoy::Event` named `Visited landing page` and each sign-up named `Signed up`. If you need to track different events, specify them:
+It assumes that each visit was tracked as an `Ahoy::Event` named `Visited landing page` and each sign-up named `Signed up`. If you want to track different events, specify them:
 
 ```ruby
 SplitTestResults.new(:landing_page, start: 'Visited', finish: 'Purchased').success_rates
