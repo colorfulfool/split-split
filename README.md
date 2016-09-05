@@ -1,6 +1,6 @@
 # Split-Split
 
-Split-Split is a **tiny A/B testing framework**. It relies on Ahoy for visitor tracking.
+Split-Split is a **tiny A/B testing framework** for Rails. It relies on Ahoy for visitor tracking.
 
 ## Usage
 
