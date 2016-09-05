@@ -1,6 +1,6 @@
 # Split-Split
 
-Split-Split is an **tiny A/B testing framework**. It relies on Ahoy for visitor tracking.
+Split-Split is a **tiny A/B testing framework**. It relies on Ahoy for visitor tracking.
 
 ## Usage
 
@@ -8,7 +8,7 @@ Let's say, we've made two versions of our landing page and we can't decide which
 
 ### 1. Collect the data
 
-We put our two versions into separate files: `landing_page_visual.html.erb` and `landing_page_textual.html.erb`. Head the controller action that renders the landing page and insert `split_test` there.
+We put our two versions into separate files: `landing_page_visual.html.erb` and `landing_page_textual.html.erb`. Head into the controller action that renders the landing page and insert `split_test` there.
 
 ```ruby
 def landing_page
@@ -29,7 +29,7 @@ Wherever you want to display results, write this:
 <% end %>
 ```
 
-It assumes that each visit is tracked as an `Ahoy::Event` with name `Visited landing page` and each sign-up `Signed up`. You want to track different events, specify them:
+It assumes that each visit was tracked as an `Ahoy::Event` named `Visited landing page` and each sign-up named `Signed up`. If you need to track different events, specify them:
 
 ```ruby
 SplitTestResults.new(:landing_page, start: 'Visited', finish: 'Purchased').success_rates
