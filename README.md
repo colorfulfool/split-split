@@ -2,16 +2,18 @@
 
 Split-Split is a **tiny A/B testing framework** for Rails.
 
-Perform an experiment anywhere in the app:
+Can't decide which version of the landing page to use? Use both:
 ```erb
-<% split_test :welcome_speech, [:polite, :consise] do |variant| %>
-  <h1><%= t("welcome_speech.#{variant}") %></h1>
-<% end %>
+def landing_page
+  split_test :landing_page, [:visual, :textual] do |variant|
+    render "landing_page_#{variant}"
+  end
+end
 ```
 
-Visualize the results:
+Then visualize the difference:
 ```erb
-<%= pie_chart SplitTestResults.new(:welcome_speech).success_rates %>
+<%= pie_chart SplitTestResults.new(:landing_page).success_rates %>
 ```
 
 ## Installation
