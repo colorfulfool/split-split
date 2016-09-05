@@ -16,7 +16,7 @@ Visualize the results.
 
 ## Installation
 
-Visitor tracking is provided by Ahoy. If you want to chart the results like in example above, install Chartkick as well.
+Visitor tracking is provided by [Ahoy](https://github.com/ankane/ahoy). If you want to chart the results like in example above, install [Chartkick](https://github.com/ankane/chartkick) gem.
 
 ```ruby
 gem 'split_split'
