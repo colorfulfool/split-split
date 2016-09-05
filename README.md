@@ -3,7 +3,7 @@
 Split-Split is a **tiny A/B testing framework** for Rails.
 
 Can't decide which version of the landing page to use? Use both:
-```erb
+```ruby
 def landing_page
   split_test :landing_page, [:visual, :textual] do |variant|
     render "landing_page_#{variant}"
