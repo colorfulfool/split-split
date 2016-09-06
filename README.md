@@ -2,14 +2,14 @@
 
 Split-Split is a **tiny A/B testing framework** for Rails.
 
-Set up an experiment.
+Conduct an experiment:
 ```erb
 <% split_test :welcome_speech, [:rich, :consise] do |variant| %>
   <h2><%= t("welcome_speech.#{variant}") %></h2>
 <% end %>
 ```
 
-Visualize the results.
+Visualize the results:
 ```erb
 <%= pie_chart SplitTestResults.new(:welcome_speech).success_rates %>
 ```
@@ -38,7 +38,7 @@ def landing_page
 end
 ```
 
-### 2. Visualize results
+### 2. Display results
 
 Wherever you want to display results, write this:
 
