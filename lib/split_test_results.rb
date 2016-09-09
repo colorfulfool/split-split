@@ -15,6 +15,6 @@ class SplitTestResults
   end
 
   def distribution_on_stage(goal)
-    Ahoy::Event.this_week.where(name: goal).group("properties -> 'variant' ->> '#{@experiment}'").count.except(nil)
+    Ahoy::Event.where(name: goal).group("properties -> 'variant' ->> '#{@experiment}'").count.except(nil)
   end
 end
