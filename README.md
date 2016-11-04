@@ -1,6 +1,6 @@
-# Split-Split
+# Split⚡️Split
 
-Split-Split is a **tiny A/B testing framework** for Rails.
+SplitSplit is a **tiny A/B testing framework** for Rails.
 
 Define an experiment like this:
 ```erb
