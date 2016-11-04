@@ -2,16 +2,31 @@
 
 Split-Split is a **tiny A/B testing framework** for Rails.
 
-Conduct an experiment:
+Define an experiment like this:
 ```erb
-<% split_test :welcome_speech, [:rich, :consise] do |variant| %>
-  <h2><%= t("welcome_speech.#{variant}") %></h2>
+<% split_test :welcome_speech do |speech| %>
+  <% if speech.with_pictures? %>
+    <%= render 'welcome_speech' %>
+  <% else %>
+    Welcome!
+  <% end %>
 <% end %>
 ```
 
-Visualize the results:
+And you'll get this:
+```
+Welcome speech 
+Visited landing page -> [Track this differently]
+  with pictures -> 30% signed up
+  control group -> 10% signed up
+[Add a different graph for this experiment]
+```
+
+But first, don't forget to mark important events in your app:
 ```erb
-<%= pie_chart SplitTestResults.new(:welcome_speech).success_rates %>
+<%= track.funnel_started %> <!-- defaults to name='Visited landing page' -->
+<%= track.funnel_finished %> <!-- defaults to name='Signed up' -->
+<%= track.intermediary_point 'Payment' %> <!-- outputs "<script>ahoy.track('Payment')</script> -->
 ```
 
 ## Installation
