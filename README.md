@@ -16,10 +16,10 @@ Define an experiment like this:
 And you'll get this:
 ```
 Welcome speech 
-Visited landing page -> [Track this differently]
-  with pictures -> 30% signed up
-  control group -> 10% signed up
-[Add a different graph for this experiment]
+  Visited landing page -> [Track this differently]
+    with pictures -> 30% signed up
+    control group -> 10% signed up
+  [Add a different graph for this experiment]
 ```
 
 But first, don't forget to mark important events in your app:
